@@ -1,0 +1,20 @@
+# infer the proper GOPATH from the current dir
+gohere () {
+        local dir=$(pwd)
+        while true
+        do
+                [[ "$dir" = "/" ]] && return 1
+                if [[ "$dir" =~ src$ ]]
+                then
+                        echo "export GOPATH=$dir"
+                        export GOPATH=$(dirname $dir)
+                        return 0
+                fi
+                dir=$(dirname $dir) 
+        done
+}
+
+# source variables of the given file
+sourcenv () {
+        export $(cat $1 | xargs)
+}

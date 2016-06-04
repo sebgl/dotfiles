@@ -1,0 +1,20 @@
+#############
+#  general  #
+#############
+
+alias m="make"
+alias tmux="tmux -2"
+alias lla="ls -la"
+
+##########
+# docker #
+##########
+
+# remove containers
+alias drm="docker ps -qa | xargs -r docker rm"
+
+# remove volumes
+alias dvrm="docker volume ls -qf dangling=true | xargs -r docker volume rm"
+
+# remove images
+alias drmi="docker images -q --filter dangling=true | xargs -r docker rmi"
