@@ -65,4 +65,4 @@ for file in ~/.{aliases,functions,myzshrc}; do
 done
 
 # fzf
-#[[ -f ~/.fzf.zsh ]] && (source ~/.fzf.zsh; source $HOME/.z.sh)
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh && source $HOME/.z.sh
