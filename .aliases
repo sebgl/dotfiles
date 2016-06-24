@@ -10,6 +10,9 @@ alias lla="ls -la"
 # docker #
 ##########
 
+# lighter docker ps
+alias dps="docker ps -a --format 'table{{.Names}}\t{{.Status}}'"
+
 # remove containers
 alias drm="docker ps -qa | xargs -r docker rm"
 
