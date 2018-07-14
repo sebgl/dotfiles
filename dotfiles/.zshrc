@@ -65,4 +65,10 @@ for file in ~/.{aliases,functions,myzshrc}; do
 done
 
 # fzf
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh && source $HOME/.z.sh
+source ~/.fzf.zsh
+
+# z
+source $HOME/.z.sh
+
+# zsh-syntax-highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
