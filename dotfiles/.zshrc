@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="spaceship"
+ZSH_THEME="" # use pure-prompt instead
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,6 +54,11 @@ plugins=(git docker docker-compose tmux go zsh-autosuggestions)
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 source $ZSH/oh-my-zsh.sh
+
+# pure prompt
+fpath=( "$HOME/.pure-prompt" $fpath )
+autoload -U promptinit; promptinit
+prompt pure
 
 ###########################
 # source additional files #
