@@ -77,3 +77,11 @@ source $HOME/.z.sh
 
 # zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+###########################
+#     env vars            #
+###########################
+
+# golang
+export GOPATH=$HOME/work/go
+export PATH=$PATH:$GOPATH/bin
