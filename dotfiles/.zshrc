@@ -78,6 +78,9 @@ source $HOME/.z.sh
 # zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# gcloud auto-completion
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+
 ###########################
 #     env vars            #
 ###########################
