@@ -88,7 +88,3 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.z
 # golang
 export GOPATH=$HOME/work/go
 export PATH=$PATH:$GOPATH/bin
-
-# nvm
-export NVM_DIR=$HOME/.nvm
-. "/usr/local/opt/nvm/nvm.sh"
