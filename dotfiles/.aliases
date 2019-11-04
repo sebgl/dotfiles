@@ -3,7 +3,7 @@
 #############
 
 alias m="make"
-alias tm="tmux -u"
+alias tm="tmux -u -2"
 alias lla="ls -la"
 
 alias vsc="vscode . & disown"
