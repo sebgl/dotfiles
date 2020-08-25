@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions git-open)
+plugins=(git zsh-autosuggestions)
 
 export PATH="$HOME/bin:/usr/local/kubebuilder/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
@@ -75,11 +75,22 @@ source ~/.fzf.zsh
 # z
 source $HOME/.z.sh
 
+### Fix slowness of pastes with zsh-syntax-highlighting.zsh
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+
 # zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# gcloud auto-completion
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+export PATH="${PATH}:${HOME}/.krew/bin"
 
 ###########################
 #     env vars            #
@@ -88,3 +99,9 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.z
 # golang
 export GOPATH=$HOME/work/go
 export PATH=$PATH:$GOPATH/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/seb/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/seb/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/seb/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/seb/google-cloud-sdk/completion.zsh.inc'; fi
