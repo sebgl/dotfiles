@@ -53,6 +53,7 @@ plugins=(git zsh-autosuggestions)
 
 export PATH="$HOME/bin:/usr/local/kubebuilder/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # pure prompt
