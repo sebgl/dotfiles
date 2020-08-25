@@ -74,7 +74,7 @@ done
 source ~/.fzf.zsh
 
 # z
-source $HOME/.z.sh
+source /usr/local/etc/profile.d/z.sh
 
 ### Fix slowness of pastes with zsh-syntax-highlighting.zsh
 pasteinit() {
