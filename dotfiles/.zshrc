@@ -104,5 +104,12 @@ export PATH=$PATH:$GOPATH/bin
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/sebgl/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sebgl/google-cloud-sdk/path.zsh.inc'; fi
 
+###########################
+#         misc            #
+###########################
+
+# fix gpg issues
+export GPG_TTY=$(tty)
+
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/sebgl/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sebgl/google-cloud-sdk/completion.zsh.inc'; fi
