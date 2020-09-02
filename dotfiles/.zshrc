@@ -113,3 +113,7 @@ export GPG_TTY=$(tty)
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/sebgl/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sebgl/google-cloud-sdk/completion.zsh.inc'; fi
+
+# kubectl auto-completion
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
